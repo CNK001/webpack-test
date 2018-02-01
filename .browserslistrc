@@ -1,0 +1,14 @@
+# Browsers that we support
+
+[production]
+last 3 versions
+last 3 Samsung versions
+last 3 UCAndroid versions
+safari 10
+edge 15
+ie 11
+ie 10
+ie 9
+
+[development]
+last 1 version
