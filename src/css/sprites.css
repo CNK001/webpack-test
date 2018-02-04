@@ -1,12 +1,19 @@
-spritePercentPosition($sprite) {
-  $spritePxX = $sprite[2];
-  $spritesheetWidth = $sprite[6];
-  $spritePxY = $sprite[3];
-  $spritesheetHeight = $sprite[7];
-  background-position: ($spritePxX / $spritesheetWidth) ($spritePxY / $spritesheetHeight);
-}
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
 
-// Example usage:
-.icon-home {
-  spritePercentPosition($icon_home)
+```html
+<i class="icon-home"></i>
+```
+*/
+.ico-logo-fb:before {
+  background-image: url(./img/sprite.png);
+  background-position: 0px 0px;
+  width: 42px;
+  height: 42px;
+}
+.ico-logo-pl:before {
+  background-image: url(./img/sprite.png);
+  background-position: -42px 0px;
+  width: 42px;
+  height: 42px;
 }

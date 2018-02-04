@@ -7,13 +7,12 @@ module.exports = {
   dest: "sprites.png",
   destImage: './src/img/sprite.png',
   imgPath: './img/sprite.png',
-  destCSS: './src/css/sprites.scss',
-  padding: 2,
-  // algorithm: 'binary-tree',
-  cssTemplate: 'spritesmith-template.scss'
-  // cssOpts: {
-  //   cssClass: function (item) {
-  //     return util.format('.ico-%s:before', item.name);
-  //   }
-  // }
+  destCSS: './src/css/sprites.css',
+  padding: 0,
+  algorithm: 'binary-tree',
+  cssOpts: {
+    cssClass: function (item) {
+      return util.format('.ico-%s:before', item.name);
+    }
+  }
 };

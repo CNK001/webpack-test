@@ -3,55 +3,17 @@
 /* Custom Styles (colors, disable border-radius etc.) */
 @import "custom";
 
-/* Default Font */
+/* Default Fonts */
 @import "fonts";
 
-/* Bootstrap Grid */
-@import "~bootstrap/scss/bootstrap-grid";
+/* Bootstrap 4 */
+@import "~bootstrap/scss/bootstrap";
 
-/* important mixins */
-@import "~bootstrap/scss/mixins/border-radius";
-@import "~bootstrap/scss/mixins/box-shadow";
-@import "~bootstrap/scss/mixins/buttons";
-@import "~bootstrap/scss/mixins/clearfix";
-@import "~bootstrap/scss/mixins/gradients";
-@import "~bootstrap/scss/mixins/hover";
-@import "~bootstrap/scss/mixins/image";
-@import "~bootstrap/scss/mixins/text-hide";
-@import "~bootstrap/scss/mixins/text-emphasis";
-@import "~bootstrap/scss/mixins/text-truncate";
-@import "~bootstrap/scss/mixins/reset-text";
-@import "~bootstrap/scss/mixins/transition";
-@import "~bootstrap/scss/mixins/visibility";
+@import "theme";
 
-@import "~bootstrap/scss/root";
-
-/* Normalization of HTML elements */
-@import "~bootstrap/scss/reboot";
-
-/* Images:
-.img-fluid, .img-thumbnail, .figure, .figure-img, .figure-caption */
-@import "~bootstrap/scss/images";
-
-/* Buttons:
-.btn, .btn-color, .btn-outline, .btn-link, .btn-block, .btn-sm, .btn-lg */
-@import "~bootstrap/scss/buttons";
-
-/* Navigation */
-@import "~bootstrap/scss/nav";
-@import "~bootstrap/scss/navbar";
-
-/* Marigns and paddings */
-@import "~bootstrap/scss/utilities/spacing";
-
-/* Text Alignment, Transformation, Weight, Contextual colors, .text-hide*/
-@import "~bootstrap/scss/utilities/text";
-
-/* Position:
-.fixed-top, .fixed-bottom, .sticky-top, .position-(static/relative/absolute/fixed/sticky) */
-@import "~bootstrap/scss/utilities/position";
-
-/* Flex variation */
-@import "~bootstrap/scss/utilities/flex";
-
+/* Sprites CSS */
 @import "../css/sprites";
+
+/* Ionicons */
+// @import "~ionicons/dist/scss/ionicons.scss";
+@import "ionicons";

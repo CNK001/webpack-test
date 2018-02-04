@@ -64,3 +64,95 @@ $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
 $enable-rounded:            false !default;
+
+//fix SCSS in build:prod
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;
+
+
+
+.navbar-toggler-icon {
+  width: 48px;
+  height: 36px;
+  background: transparent;
+  position: relative;
+  display: inline-block;
+}
+.navbar-toggler.collapsed .navbar-toggler-icon:hover {
+  cursor: pointer;
+}
+.navbar-toggler.collapsed .navbar-toggler-icon:hover .close-icon:before {
+  -webkit-transform: translate3d(0, -10px, 0);
+  transform: translate3d(0, -10px, 0);
+}
+.navbar-toggler.collapsed .navbar-toggler-icon:hover .close-icon:after {
+  -webkit-transform: translate3d(0, 10px, 0);
+  transform: translate3d(0, 10px, 0);
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon .close-icon {
+  background: transparent;
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon .close-icon:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon .close-icon:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.close-icon {
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+.close-icon:before,
+.close-icon:after {
+  width: 25px;
+  height: 2px;
+  content: '';
+  background-color: #fff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.close-icon:before {
+  -webkit-transform: translate3d(0, -8px, 0);
+  transform: translate3d(0, -8px, 0);
+}
+.close-icon:after {
+  -webkit-transform: translate3d(0, 8px, 0);
+  transform: translate3d(0, 8px, 0);
+}
+@-webkit-keyframes open-hover {
+  0% {
+      font-size: 10px;
+  }
+  30% {
+      font-size: 15px;
+  }
+  100% {
+      font-size: 12px;
+  }
+}
+@keyframes open-hover {
+  0% {
+      font-size: 10px;
+  }
+  30% {
+      font-size: 15px;
+  }
+  100% {
+      font-size: 12px;
+  }
+}

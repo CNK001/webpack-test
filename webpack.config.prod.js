@@ -8,9 +8,12 @@ const extractSass = new ExtractTextPlugin({
 });
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+   app: './src/app.js',
+   subpage: './src/subpage.js'
+  },
   output: {
-    filename: pkg.dist_js+'app.js',
+    filename: pkg.dist_js+'[name].js',
     path: path.resolve(__dirname, 'public')
   },
   module: {
@@ -28,6 +31,14 @@ module.exports = {
         }]
       },
       {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file-loader?name=assets/fonts/[name].[ext]'
+      },
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
+      },
+      {
         test: /\.(scss)$/,
         use: extractSass.extract({
           fallback: 'style-loader',
@@ -37,7 +48,7 @@ module.exports = {
               loader: "css-loader", // translates CSS into CommonJS
               options: {
                 //modules: true,
-                url: false
+                url: false //disable checking path to images etc.
               }
             },
             {
@@ -51,19 +62,46 @@ module.exports = {
             }
           ]
         })
-      }
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: ['file-loader?context=src/img&name=../'+pkg.src_tmp+'img-compressed/[path][name].[ext]', {
+          // loaders: ['lowercase-file', 'image-webpack-loader'],
+          loader: 'image-webpack-loader',
+          query: {
+            mozjpeg: {
+              progressive: true,
+              quality: 70
+            },
+            gifsicle: {
+              interlaced: false,
+            },
+            optipng: {
+              optimizationLevel: 7,
+            },
+            pngquant: {
+              quality: '75-85',
+              speed: 1
+            },
+          },
+        }],
+        exclude: /node_modules/,
+        include: __dirname,
+      },
     ]
   },
   plugins: [
     new CopyWebpackPlugin([
-        // {output}/to/file.txt
-        //{ from: 'from/file.txt', to: 'to/file.txt' },
-
-        // {output}/to/directory/file.txt
-        //{ from: 'from/file.txt', to: 'to/directory' },
-
         // Copy directory contents to {output}/to/directory/
-        { from: 'src/img/', to: pkg.dist_img },
+        { 
+          from: pkg.src_tmp+'img-compressed/', 
+          to: pkg.dist_img+'[path][name].[ext]'
+        }
+        // ,
+        // {
+        //   from: './node_modules/ionicons/dist/fonts',
+        //   to: pkg.dist_fonts
+        // }
 
         // Copy glob results to /absolute/path/
         //{ from: 'from/directory/**/*', to: '/absolute/path' },
@@ -71,19 +109,14 @@ module.exports = {
         // ignore: [
         //     // Doesn't copy any files with a txt extension
         //     '*.txt',
-
-        //     // Doesn't copy any file, even if they start with a dot
-        //     '**/*',
-
-        //     // Doesn't copy any file, except if they start with a dot
-        //     { glob: '**/*', dot: false }
         // ],
 
         // By default, we only copy modified files during
         // a watch or webpack-dev-server build. Setting this
         // to `true` copies all files.
         copyUnmodified: true
-    }),
+    }
+  ),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
