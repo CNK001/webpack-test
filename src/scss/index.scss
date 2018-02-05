@@ -16,4 +16,7 @@
 
 /* Ionicons */
 // @import "~ionicons/dist/scss/ionicons.scss";
-@import "ionicons";
+@import "ionicons"; //only .ion class (font via WebFontLoad)
+
+/* Waves */
+@import "~node-waves/src/scss/waves.scss";

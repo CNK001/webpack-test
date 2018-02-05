@@ -1,12 +1,12 @@
 // load assets
-function requireAll(r) { r.keys().forEach(r); }
-requireAll(require.context('./img/', true));
+function requireAll(r) { r.keys().forEach(r) }
+requireAll(require.context('./img/', true))
 
 window.$ = window.jQuery = require('jquery')
 window.Popper = require('popper.js')
 require('bootstrap')
 
-var WebFont = require('webfontloader');
+var WebFont = require('webfontloader')
 
 WebFont.load({
   google: {
@@ -14,7 +14,7 @@ WebFont.load({
   },
   custom: {
     families: ['Ionicons'],
-    urls: ['assets/css/ionicons.css']
+    urls: ['assets/css/fonts.css']
   }
 });
 
@@ -27,4 +27,17 @@ $(function (){
   $('[data-toggle="popover"]').popover()
 })
 
-import './css/ionicons.css'
+// Waves.js
+import '../node_modules/node-waves/src/js/waves.js'
+
+//Initialization
+Waves.attach('.btn:not(.btn-flat), .btn-floating', ['waves-light']);
+Waves.attach('.btn-flat', ['waves-effect']);
+Waves.attach('.view .mask', ['waves-light']);
+Waves.attach('.waves-light', ['waves-light']);
+Waves.attach('.waves-effect', ['waves-effect']);
+Waves.attach('.navbar-nav a:not(.navbar-brand), .nav-icons li a, .navbar form, .nav-tabs .nav-item', ['waves-light']);
+Waves.attach('.pager li a', ['waves-light']);
+Waves.attach('.pagination .page-item .page-link', ['waves-effect']);
+Waves.init();
+"use strict";

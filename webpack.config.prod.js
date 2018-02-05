@@ -1,15 +1,15 @@
 const webpack = require('webpack')
 const pkg = require('./webpack.variables.js')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
-const extractSass = new ExtractTextPlugin({
-  filename: pkg.dist_css+"styles.css",
-});
+const extractSass = new ExtractTextPlugin({ filename: pkg.dist_css+"[name].css" });
+const extractStyles = new ExtractTextPlugin({ filename: pkg.dist_css+'css/[name].css' });
 
 module.exports = {
   entry: {
    app: './src/app.js',
+   fonts: './src/fonts.js',
    subpage: './src/subpage.js'
   },
   output: {
@@ -31,12 +31,54 @@ module.exports = {
         }]
       },
       {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        exclude: [/fonts/],
+        loaders: ['file-loader?context=src/img&name=../'+pkg.src_tmp+'img-compressed/[path][name].[ext]', {
+          // loaders: ['lowercase-file', 'image-webpack-loader'],
+          loader: 'image-webpack-loader',
+          query: {
+            mozjpeg: {
+              progressive: true,
+              quality: 70
+            },
+            gifsicle: {
+              interlaced: false,
+            },
+            optipng: {
+              optimizationLevel: 7,
+            },
+            pngquant: {
+              quality: '75-85',
+              speed: 1
+            },
+          },
+        }],
+        include: __dirname,
+      },
+      {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader?name=assets/fonts/[name].[ext]'
       },
       {
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
+        use: extractStyles.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: "css-loader", // translates CSS into CommonJS
+              options: {
+                //modules: true,
+                //url: false //disable checking path to images etc.
+              }
+            },
+            {
+              loader: 'postcss-loader' //load autoprefixer
+            },
+            {
+              loader: 'resolve-url-loader'
+            },
+          ]
+        })
       },
       {
         test: /\.(scss)$/,
@@ -62,32 +104,7 @@ module.exports = {
             }
           ]
         })
-      },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: ['file-loader?context=src/img&name=../'+pkg.src_tmp+'img-compressed/[path][name].[ext]', {
-          // loaders: ['lowercase-file', 'image-webpack-loader'],
-          loader: 'image-webpack-loader',
-          query: {
-            mozjpeg: {
-              progressive: true,
-              quality: 70
-            },
-            gifsicle: {
-              interlaced: false,
-            },
-            optipng: {
-              optimizationLevel: 7,
-            },
-            pngquant: {
-              quality: '75-85',
-              speed: 1
-            },
-          },
-        }],
-        exclude: /node_modules/,
-        include: __dirname,
-      },
+      }
     ]
   },
   plugins: [
