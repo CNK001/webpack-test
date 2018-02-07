@@ -1,10 +1,9 @@
 const webpack = require('webpack')
 const pkg = require('./webpack.variables.js')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
-const extractSass = new ExtractTextPlugin({ filename: pkg.dist_css+"styles.css" });
-const extractStyles = new ExtractTextPlugin({ filename: pkg.dist_css+'[name].css' });
+const extractStyles = new ExtractTextPlugin({ filename: pkg.dist_css+'[name].css' })
 
 module.exports = {
   entry: {
@@ -14,8 +13,11 @@ module.exports = {
   },
   output: {
     filename: pkg.dist_js+'[name].js',
+    sourceMapFilename: "[file].map",
     path: path.resolve(__dirname, 'public')
   },
+  //devtool: 'source-map',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -83,7 +85,7 @@ module.exports = {
       },
       {
         test: /\.(scss)$/,
-        use: extractSass.extract({
+        use: extractStyles.extract({
           fallback: 'style-loader',
           //resolve-url-loader may be chained before sass-loader if necessary
           use: [
@@ -141,6 +143,6 @@ module.exports = {
       jQuery: "jquery",
       Popper: ['popper.js', 'default']
     }),
-    extractSass
+    extractStyles
   ]
 };

@@ -4,13 +4,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
 const extractSass = new ExtractTextPlugin({ filename: pkg.dist_css+"[name].css" });
-const extractStyles = new ExtractTextPlugin({ filename: pkg.dist_css+'css/[name].css' });
+const extractStyles = new ExtractTextPlugin({ filename: pkg.dist_css+'[name].css' });
 
 module.exports = {
   entry: {
-   app: './src/app.js',
-   fonts: './src/fonts.js',
-   subpage: './src/subpage.js'
+    app: './src/app.js',
+    fonts: './src/fonts.js',
+    subpage: './src/subpage.js'
   },
   output: {
     filename: pkg.dist_js+'[name].js',
