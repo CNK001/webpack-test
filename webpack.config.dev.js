@@ -16,8 +16,8 @@ module.exports = {
     sourceMapFilename: "[file].map",
     path: path.resolve(__dirname, 'public')
   },
-  //devtool: 'source-map',
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
+  //devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -98,13 +98,19 @@ module.exports = {
               }
             },
             {
-              loader: 'postcss-loader' //load autoprefixer
+              loader: 'postcss-loader', //load autoprefixer
+              options: {
+                sourceMap: true
+              }
             },
             {
               loader: 'resolve-url-loader'
             },
             {
-              loader: "sass-loader" // compiles Sass to CSS
+              loader: "sass-loader", // compiles Sass to CSS
+              options: {
+                sourceMap: true
+              }
             }
           ]
         })
