@@ -10,15 +10,32 @@ Build set-up based on Webpack 3 and npm scripts for common needs.
 6. Autoprefixer
 7. Minify PNG, JPEG, GIF, SVG and WEBP images
 
-# Try out
+## Webpack 3 Plugins
+* copy-webpack-plugin
+* extract-text-webpack-plugin
+* html-webpack-plugin (coming soon)
+* clean-webpack-plugin (soon)
+
+## Webpack 3 Loaders
+* babel-loader
+* image-webpack-loader
+* file-loader
+* css-loader
+* resolve-url-loader
+* postcss-loader
+* style-loader
+* sass-loader
+* html-loader (soon)
+
+## Try out
 ```powershell
 # Install nodejs dependencies
 yarn
 
-# Develop
+# Develop output
 yarn run build:prod 
 
-# Production
+# Production-ready output
 yarn run build:dev 
 
 # Build sprites from images in src/imag/sprite/
