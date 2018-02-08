@@ -13,19 +13,18 @@ Build set-up based on Webpack 3 and npm scripts for common needs.
 # Try out
 ```powershell
 yarn # Install nodejs dependencies
-```
 
-```powershell
+
 yarn run build:prod # Develop
-```
 
-```powershell
+
 yarn run build:dev # Production
-```
 
-```powershell
+
 yarn run sprites # Build sprites from images in src/imag/sprite/
-```
 
 
 # Open `\public\index.htm`-file in browser and watch the result.
+```
+
+
