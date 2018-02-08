@@ -19,11 +19,13 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
+    "headroom.js": "^0.9.4",
     "ionicons": "^4.0.0-13",
     "jquery": "^3.2.1",
     "node-waves": "^0.7.6",
     "popper.js": "^1.12.5",
     "postcss-cli": "^4.1.1",
+    "slick-carousel": "^1.8.1",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {

@@ -1,27 +1,26 @@
 .ion {
-  display: inline-block;
-  font-family: "Ionicons";
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  text-rendering: auto;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-family: "Ionicons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-
 
 //only necessary icons - we don't need to load all 698 class :P
 .ion-logo-instagram:before {
-  content: "\f23e";
+    content: "\f23e";
 }
 
 .ion-logo-googleplus:before {
-  content: "\f23b";
+    content: "\f23b";
 }
 
 .ion-logo-facebook:before {
-  content: "\f236";
+    content: "\f236";
 }

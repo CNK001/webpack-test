@@ -4,11 +4,13 @@ Build set-up based on Webpack 3 and npm scripts for common needs.
 ## Packages
 1. Bootstrap 4
 2. Ionicons 4
-3. WebFont Load
-4. Waves
-5. CSS Sprites
-6. Autoprefixer
-7. Minify PNG, JPEG, GIF, SVG and WEBP images
+3. Headroom.js
+4. WebFont Load
+5. Waves
+6. Slick Carousel
+7. CSS Sprites
+8. Autoprefixer
+9. Minify PNG, JPEG, GIF, SVG and WEBP images
 
 ## Webpack 3 Plugins
 * copy-webpack-plugin
