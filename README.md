@@ -1,7 +1,7 @@
 # Webpack 3 - pack by spoko.space
 Build set-up based on Webpack 3 and npm scripts for common needs.
 
-##Packages:
+## Packages
 1. Bootstrap 4
 2. Ionicons 4
 3. WebFont Load
@@ -11,19 +11,19 @@ Build set-up based on Webpack 3 and npm scripts for common needs.
 7. Minify PNG, JPEG, GIF, SVG and WEBP images
 
 # Try out
-```MINGW64
+```powershell
 yarn # Install nodejs dependencies
 ```
 
-```MINGW64
+```powershell
 yarn run build:prod # Develop
 ```
 
-```MINGW64
+```powershell
 yarn run build:dev # Production
 ```
 
-```MINGW64
+```powershell
 yarn run sprites # Build sprites from images in src/imag/sprite/
 ```
 
