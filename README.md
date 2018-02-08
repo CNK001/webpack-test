@@ -7,9 +7,12 @@ Abc...
 ```powershell
 yarn # Install nodejs dependencies
 
+
+```Develop:
 yarn run build:prod
 
+```Production:
 yarn run build:dev
 
-# Open `\public\test.html`-file in browser and watch the result.
+# Open `\public\index.htm`-file in browser and watch the result.
 ```

@@ -64,18 +64,23 @@ module.exports = {
       {
         test: /\.css$/,
         use: extractStyles.extract({
+          publicPath: '../../',         // The magic smoke
           fallback: 'style-loader',
           use: [
             {
               loader: "css-loader", // translates CSS into CommonJS
               options: {
                 //modules: true,
+                url: true,
                 sourceMap: true
                 //url: false //disable checking path to images etc.
               }
             },
             {
-              loader: 'postcss-loader' //load autoprefixer
+              loader: 'postcss-loader', //load autoprefixer
+              options: {
+                sourceMap: true
+              }
             },
             {
               loader: 'resolve-url-loader'

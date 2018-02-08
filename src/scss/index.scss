@@ -20,3 +20,8 @@
 
 /* Waves */
 @import "~node-waves/src/scss/waves.scss";
+
+// Fix Wave Effects
+.nav-link {
+    display: block !important;
+}
