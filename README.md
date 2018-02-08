@@ -1,18 +1,31 @@
-# Webpack 3 + Bootstrap 4 + CSS Sprites + Google Fonts
+# Webpack 3 - pack by spoko.space
+Build set-up based on Webpack 3 and npm scripts for common needs.
 
-Abc...
+##Packages:
+1. Bootstrap 4
+2. Ionicons 4
+3. WebFont Load
+4. Waves
+5. CSS Sprites
+6. Autoprefixer
+7. Minify PNG, JPEG, GIF, SVG and WEBP images
 
 # Try out
-
-```powershell
+```MINGW64
 yarn # Install nodejs dependencies
+```
 
+```MINGW64
+yarn run build:prod # Develop
+```
 
-```Develop:
-yarn run build:prod
+```MINGW64
+yarn run build:dev # Production
+```
 
-```Production:
-yarn run build:dev
+```MINGW64
+yarn run sprites # Build sprites from images in src/imag/sprite/
+```
+
 
 # Open `\public\index.htm`-file in browser and watch the result.
-```
