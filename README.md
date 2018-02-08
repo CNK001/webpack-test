@@ -44,4 +44,8 @@ yarn run sprites
 # Open `\public\index.htm`-file in browser and watch the result.
 ```
 
-
+## Related links
+* [WebFont Loader]: https://github.com/typekit/webfontloader
+* [Bootstrap 4]: https://github.com/twbs/bootstrap
+* [Ionicons 4]: https://github.com/ionic-team/ionicons
+* [Waves]: https://github.com/fians/Waves
