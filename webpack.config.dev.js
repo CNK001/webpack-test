@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
 const extractStyles = new ExtractTextPlugin({ filename: pkg.dist_css+'[name].css' })
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -137,6 +138,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new HtmlWebpackPlugin(),
     new CopyWebpackPlugin([
         // Copy directory contents to {output}/to/directory/
         { 
