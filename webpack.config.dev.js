@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const pkg = require('./webpack.variables.js')
+const pkg = require('./webpack.page.settings.js')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
@@ -109,7 +109,10 @@ module.exports = {
               }
             },
             {
-              loader: 'resolve-url-loader'
+              loader: 'resolve-url-loader',
+              options: {
+                sourceMap: true
+              }
             },
             {
               loader: "sass-loader", // compiles Sass to CSS

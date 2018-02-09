@@ -1,10 +1,29 @@
 // stylelint-disable
 
+body {
+    padding-top: 5rem;
+}
+
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.nav-item .ion {
+    font-size: 1.25rem;
+}
+
 // Default BS4 functions
 @import "~bootstrap/scss/functions";
 
 /* Colors settings */
 @import 'colors';
+
+/* Default Fonts */
+@import "fonts";
+
+/* Forms: checkbox, radio etc. */
+@import "forms";
 
 // Disable ugly border-radius
 $enable-rounded: false !default;
@@ -41,16 +60,6 @@ $input-btn-focus-width:       .2rem !default;
 $input-btn-focus-box-shadow:  none !important !default; //disable ugly shadow outline in focus buttons
 $input-btn-border-width:      $border-width !default;
 
-// Grid Breakpoints
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1440px
-) !default;
-
 .navbar-toggler-icon {
   width: 48px;
   height: 36px;
@@ -83,7 +92,7 @@ $grid-breakpoints: (
 .close-icon {
   width: 25px;
   height: 2px;
-  background-color: #fff;
+  background-color: $white;
   position: absolute;
   top: 50%;
   left: 0;
@@ -98,7 +107,7 @@ $grid-breakpoints: (
   width: 25px;
   height: 2px;
   content: '';
-  background-color: #fff;
+  background-color: $white;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: absolute;
@@ -136,3 +145,34 @@ $grid-breakpoints: (
       font-size: 12px;
   }
 }
+
+main {
+    z-index: 1;
+    margin-bottom: 30px;
+    background-color: $white;
+}
+
+footer {
+    align-items: center;
+    bottom: 0;
+    display: flex !important;
+    height: 30px;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: -100;
+    a {
+        color: rgba($white, .5);
+        &:hover {
+            color: rgba($white, .75);
+        }
+    }
+}
+
+.footer a {
+
+}
+
+@import "breakpoints";
+
+@import "responsive";

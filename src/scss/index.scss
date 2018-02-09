@@ -1,15 +1,10 @@
 // stylelint-disable declaration-no-important
 
 /* Custom Styles (colors, disable border-radius etc.) */
-@import "custom";
-
-/* Default Fonts */
-@import "fonts";
+@import "theme/theme";
 
 /* Bootstrap 4 */
 @import "~bootstrap/scss/bootstrap";
-
-@import "theme";
 
 /* Sprites CSS */
 @import "../css/sprites";
@@ -19,7 +14,7 @@
 @import "ionicons"; //only .ion class (font via WebFontLoad)
 
 /* Waves */
-@import "~node-waves/src/scss/waves.scss";
+@import "~node-waves/src/scss/waves";
 
 // Fix Wave Effects
 .nav-link {

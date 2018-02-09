@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Homepage | spoko.space</title>
+  <title>Home | spoko.space</title>
   <link rel="stylesheet" type="text/css" href="assets/css/app.css">
 </head>
 
@@ -40,16 +40,22 @@
           </div>
         </li>
       </ul>
-      <ul class="navbar-nav mr-sm-2">
+      <ul class="navbar-nav mr-sm-2 flex-row">
         <li class="nav-item">
-          <a class="nav-link" href="#"><span class="ion ion-logo-googleplus"></span></a>
+          <a class="nav-link" href="#">
+            <span class="ion ion-logo-instagram"></span>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><span class="ion ion-logo-instagram"></span></a>
+          <a class="nav-link" href="#">
+            <span class="ion ion-logo-facebook"></span>
+          </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"><span class="ion ion-logo-facebook"></span></a>
-          </li>
+          <a class="nav-link" href="#">
+            <span class="ion ion-logo-googleplus"></span>
+          </a>
+        </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -58,34 +64,115 @@
     </div>
   </nav>
 
-  <main role="main" class="container">
+  <main role="main">
 
-    <div class="starter-template">
+    <div class="starter-template container">
       <h1>Bootstrap starter template</h1>
       <p class="lead">Use this document as a way to quickly start any new project.
         <br> All you get is this text and a mostly barebones HTML document.</p>
     </div>
 
-  </main>
-  <!-- /.container -->
+    <div class="container">
+      <h2>
+        <span class="ion ion-logo-google"></span>
+        <span class="ion ion-logo-instagram"></span>
+        <span class="ion ion-logo-google"></span>
+        Ionicons 4 test
+      </h2>
 
-  <div class="container">
-    <h2>
-      <span class="ion ion-logo-google"></span>
-      <span class="ion ion-logo-instagram"></span>
-      <span class="ion ion-logo-google"></span>
-      Ionicons 4 test
-    </h2>
+      <div class="mb-4">
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+      </div>
 
+      <div class="mb-4">
+        <button type="button" class="btn btn-sm btn-info">Large button</button>
+        <button type="button" class="btn btn-sm btn-success">Large button</button>
+      </div>
+      <div class="mb-4">
+        <button type="button" class="btn btn-lg btn-danger">Large button</button>
+      </div>
+      <div class="mb-4">
+        <button type="button" class="btn btn-light waves-effect">Large button</button>
+        <button type="button" class="btn btn-dark">Large button</button>
+      </div>
+    </div>
 
-    <button type="button" class="btn btn-primary">Primary</button>
+    <div class="container">
+      <div class="form-group">
+        <input type="checkbox" id="checkbox1" checked="checked">
+        <label for="checkbox1">Classic checkbox</label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" class="filled-in" id="checkbox2" checked="checked">
+        <label for="checkbox2">Filled-in checkbox</label>
+      </div>
+      <div class="form-group">
+        <input name="group" type="radio" id="radio-test-1">
+        <label for="radio-test-1">Option 1</label>
+      </div>
+      <div class="form-group ">
+        <input name="group" type="radio" class="with-gap" id="radio-test-2">
+        <label for="radio-test-2">Option 2</label>
+      </div>
+    </div>
 
-    <button type="button" class="btn btn-secondary">
-      Secondary
-    </button>
-
-    <button type="button" class="btn btn-lg btn-danger waves-effect">Large button</button>
+    <div class="bg-light py-5">
+    <div class="container">
+      <form>
+        <h2 class="h5 mb-4 text-uppercase text-center">
+          Napisz do nas
+        </h2>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="md-form">
+              <input type="text" id="name" name="name" class="form-control">
+              <label for="name" class="">Imię</label>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="md-form">
+              <input type="text" id="email" name="email" class="form-control">
+              <label for="email" class="">E-mail</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="md-form">
+              <input type="text" id="topic" name="topic" class="form-control">
+              <label for="topic" class="">Temat</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="md-form">
+              <textarea type="text" id="message" name="message" class="md-textarea"></textarea>
+              <label for="message">Wiadomość</label>
+            </div>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-default waves-effect waves-light">Wyślij</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
+
+  </main>
+
+  <footer class="footer bg-dark">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <a href="https://spoko.space" target="_blank" rel="noopener">
+            spoko.space
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="assets/js/app.js"></script>
 </body>

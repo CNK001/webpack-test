@@ -12919,7 +12919,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_node_waves_src_js_waves_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__node_modules_node_waves_src_js_waves_js__);
 // load assets
 function requireAll(r) {
-  r.keys().forEach(r);
+    r.keys().forEach(r);
 }
 requireAll(__webpack_require__(4));
 
@@ -12930,13 +12930,13 @@ __webpack_require__(9);
 var WebFont = __webpack_require__(10);
 
 WebFont.load({
-  google: {
-    families: ['Quicksand:300,400:latin-ext']
-  },
-  custom: {
-    families: ['Ionicons'],
-    urls: ['assets/css/fonts.css']
-  }
+    google: {
+        families: ['Quicksand:300,400:latin-ext']
+    },
+    custom: {
+        families: ['Ionicons'],
+        urls: ['assets/css/fonts.css']
+    }
 });
 
 
@@ -12944,12 +12944,29 @@ WebFont.load({
 
 // use tooltip and popover components everywhere
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-  $('[data-toggle="popover"]').popover();
+    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="popover"]').popover();
 });
 
 // Waves.js
 
+
+var input_selector = 'input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=search], textarea';
+$('input[autofocus]').siblings('label, i').addClass('active');
+$(document).on('change', input_selector, function () {
+    if ($(this).val().length !== 0 || $(this).attr('placeholder') !== undefined) {
+        $(this).siblings('label, i').addClass('active');
+    }
+});
+$(document).on('focus', input_selector, function () {
+    $(this).siblings('label, i').addClass('active');
+});
+$(document).on('blur', input_selector, function () {
+    var $inputElement = $(this);
+    if ($inputElement.val().length === 0 && $inputElement[0].validity.badInput !== true && $inputElement.attr('placeholder') === undefined) {
+        $inputElement.siblings('label, i').removeClass('active');
+    }
+});
 
 //Initialization
 Waves.attach('.btn:not(.btn-flat), .btn-floating', ['waves-light']);
