@@ -14,7 +14,7 @@ module.exports = {
   output: {
     filename: pkg.dist_js+'[name].js',
     sourceMapFilename: "[file].map",
-    path: path.resolve(__dirname, 'public')
+    path: path.resolve(__dirname, pkg.dist)
   },
   devtool: 'source-map',
   //devtool: 'inline-source-map',
@@ -60,6 +60,17 @@ module.exports = {
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader?name=assets/fonts/[name].[ext]'
+      },
+      {
+        test: /\.html$/,
+        use: [ {
+          loader: 'html-loader',
+          options: {
+            minimize: false,
+            removeComments: false,
+            collapseWhitespace: false
+          }
+        }]
       },
       {
         test: /\.css$/,

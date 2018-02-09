@@ -1,0 +1,1 @@
+require("html-loader!./template/header.html");

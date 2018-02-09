@@ -14,7 +14,7 @@ module.exports = {
   },
   output: {
     filename: pkg.dist_js+'[name].js',
-    path: path.resolve(__dirname, 'public')
+    path: path.resolve(__dirname, pkg.dist)
   },
   module: {
     rules: [
@@ -58,6 +58,15 @@ module.exports = {
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader?name=assets/fonts/[name].[ext]'
+      },
+      {
+        test: /\.html$/,
+        use: [ {
+          loader: 'html-loader',
+          options: {
+            minimize: false
+          }
+        }
       },
       {
         test: /\.css$/,
