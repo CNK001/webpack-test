@@ -1,13 +1,14 @@
 {
   "name": "WebPack3Test",
   "version": "1.0.2",
-  "description": "",
+  "description": "WebPack 3 Starter",
   "main": "index.js",
   "scripts": {
     "build:prod": "webpack -p --progress --env.prod --config webpack.config.prod.js",
     "build:dev": "webpack --progress --env.dev --config webpack.config.dev.js",
     "clean": "npm-run-all clean:*",
-    "clean:dist": "del-cli dist",
+    "clean:tmp": "del-cli src/_tmp",
+    "clean:dist": "del-cli public/assets",
     "watch": "webpack --watch",
     "prestart": "npm-run-all --parallel clean sprites",
     "prebuild": "npm-run-all --parallel clean sprites",
