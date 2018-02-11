@@ -5,6 +5,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
 const extractStyles = new ExtractTextPlugin({ filename: pkg.dist_css+'[name].css' })
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin')
+
+var navDefaultClass = pkg.nav_default
+var navClass = (pkg.headroom == true ? 'headroom' : navDefaultClass)
 
 module.exports = {
   entry: {
@@ -134,11 +138,26 @@ module.exports = {
             }
           ]
         })
-      }
+      },
+      // {
+      //   test: /\.hbs$/,
+      //   loader: 'handlebars-loader'
+      // },
+      // { 
+      //   test: /\.ejs$/,
+      //   loader: 'ejs-loader'
+      // },
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      excludeAssets: [/fonts.*.css/], // exclude style.js or style.[chunkhash].js  
+      title: 'My App',
+      navbar: navClass,
+      filename: 'test.html',
+     template: './src/template/test.ejs'
+    }),
+    new HtmlWebpackExcludeAssetsPlugin(),
     new CopyWebpackPlugin([
         // Copy directory contents to {output}/to/directory/
         { 

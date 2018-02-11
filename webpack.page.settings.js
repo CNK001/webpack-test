@@ -8,6 +8,8 @@ module.exports = {
   dist_fonts:   'assets/fonts/',
   dist_js:      'assets/js/',
   src_tmp:      'src/_tmp/',
+  nav_default:  'fixed-top',
+  headroom:     true,
   carousel:     false,
   parallax:     false,
   video:        false,

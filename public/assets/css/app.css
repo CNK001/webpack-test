@@ -42,7 +42,6 @@ textarea.md-textarea {
   border-bottom: 1px solid #bdbdbd;
   border-radius: 0;
   outline: none;
-  height: 2.1rem;
   width: 100%;
   font-size: 1rem;
   box-shadow: none;
@@ -52,18 +51,11 @@ textarea.md-textarea {
 
 .form-control {
   padding: 0;
-  padding-bottom: 0.6rem;
-  padding-top: 0.5rem;
-  font-size: 1rem;
-  line-height: 1.5;
   background-color: transparent;
   background-image: none;
-  border-radius: 0;
-  margin-top: 0.2rem;
-  margin-bottom: 1rem;
 }
 
-.form-control:focus {
+.md-form .form-control:focus {
   background: transparent;
   border-color: #000;
 }
@@ -89,7 +81,8 @@ textarea.md-textarea {
   cursor: text;
 }
 
-.md-form label.active {
+.md-form input:focus + label,
+.md-form textarea:focus + label {
   -webkit-transform: translateY(-140%);
   transform: translateY(-140%);
   font-size: 0.8rem;

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+   <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+
+  <body>
+      <%= require('html-loader!./header/navbar/'+htmlWebpackPlugin.options.navbar+'.ejs') %>
+      
+      <h3><%= htmlWebpackPlugin.options.title %></h3>
+    
+
+  </body>
+</html>

@@ -3,8 +3,12 @@ const pkg = require('./webpack.page.settings.js')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
-const extractSass = new ExtractTextPlugin({ filename: pkg.dist_css+"[name].css" });
-const extractStyles = new ExtractTextPlugin({ filename: pkg.dist_css+'[name].css' });
+const extractStyles = new ExtractTextPlugin({ filename: pkg.dist_css+'[name].css' })
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin')
+
+var navDefaultClass = pkg.nav_default
+var navClass = (pkg.headroom == true ? 'headroom' : navDefaultClass)
 
 module.exports = {
   entry: {
@@ -64,9 +68,11 @@ module.exports = {
         use: [ {
           loader: 'html-loader',
           options: {
-            minimize: false
+            minimize: true,
+            removeComments: true,
+            collapseWhitespace: true
           }
-        }
+        }]
       },
       {
         test: /\.css$/,
@@ -91,7 +97,7 @@ module.exports = {
       },
       {
         test: /\.(scss)$/,
-        use: extractSass.extract({
+        use: extractStyles.extract({
           fallback: 'style-loader',
           //resolve-url-loader may be chained before sass-loader if necessary
           use: [
@@ -148,6 +154,6 @@ module.exports = {
       jQuery: "jquery",
       Popper: ['popper.js', 'default']
     }),
-    extractSass
+    extractStyles
   ]
 };
